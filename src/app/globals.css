@@ -24,11 +24,11 @@
 
 /* Custom UI Utilities */
 .mino-pill {
-  @apply inline-flex items-center justify-center rounded-full bg-mino-forest text-mino-cream px-6 py-3 text-sm font-medium hover:bg-mino-forest/90 transition-all;
+  @apply inline-flex items-center justify-center rounded-full bg-mino-forest text-mino-cream px-6 py-3 text-sm font-medium hover:bg-mino-forest/90 transition-all duration-500 ease-[cubic-bezier(0.16,1,0.3,1)] hover:-translate-y-0.5 active:translate-y-0 shadow-sm hover:shadow-md;
 }
 
 .mino-pill-outline {
-  @apply inline-flex items-center justify-center rounded-full border border-mino-line bg-transparent text-mino-ink px-6 py-3 text-sm font-medium hover:bg-mino-line/30 transition-all;
+  @apply inline-flex items-center justify-center rounded-full border border-mino-line bg-transparent text-mino-ink px-6 py-3 text-sm font-medium hover:bg-mino-line/30 transition-all duration-500 ease-[cubic-bezier(0.16,1,0.3,1)] hover:-translate-y-0.5 active:translate-y-0;
 }
 
 .mino-eyebrow {
@@ -36,7 +36,7 @@
 }
 
 .mino-card {
-  @apply bg-white rounded-[2rem] border border-mino-line p-8 md:p-10 shadow-[0_20px_40px_-24px_rgba(20,40,30,0.08)] transition-all duration-300;
+  @apply bg-white rounded-[2rem] border border-mino-line p-8 md:p-10 shadow-[0_20px_40px_-24px_rgba(20,40,30,0.08)] transition-all duration-500 ease-[cubic-bezier(0.16,1,0.3,1)];
 }
 
 html {
@@ -47,9 +47,11 @@ body {
   font-family: var(--font-mono);
 }
 
-/* Native CSS Animations */
+/* Native Premium Entry Reveal Animations */
 .animate-reveal {
-  animation: minoReveal 0.9s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+  opacity: 0;
+  animation: minoReveal 1.2s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+  will-change: transform, opacity, filter;
 }
 
 .delay-100 { animation-delay: 100ms; }
@@ -59,12 +61,57 @@ body {
 @keyframes minoReveal {
   0% {
     opacity: 0;
-    transform: translateY(20px);
-    filter: blur(4px);
+    transform: translateY(30px);
+    filter: blur(8px);
   }
   100% {
     opacity: 1;
     transform: translateY(0);
     filter: blur(0);
   }
+}
+
+/* Custom Minimalist Styling for Range Input Slider */
+input[type="range"]::-webkit-slider-thumb {
+  appearance: none;
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  background: #1B3A30;
+  border: 2px solid #F8F6F0;
+  box-shadow: 0 4px 10px rgba(27, 58, 48, 0.2);
+  transition: transform 0.2s cubic-bezier(0.16, 1, 0.3, 1);
+  will-change: transform;
+}
+
+input[type="range"]::-webkit-slider-thumb:hover {
+  transform: scale(1.15);
+}
+
+input[type="range"]::-webkit-slider-thumb:active {
+  transform: scale(0.95);
+}
+
+/* Premium Header Link Underline Tracking Effect */
+.mino-nav-link {
+  position: relative;
+  display: inline-block;
+}
+
+.mino-nav-link::after {
+  content: '';
+  position: absolute;
+  width: 100%;
+  transform: scaleX(0);
+  height: 1px;
+  bottom: -4px;
+  left: 0;
+  background-color: #1B3A30; /* var(--color-mino-forest) */
+  transform-origin: bottom center;
+  transition: transform 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+  will-change: transform;
+}
+
+.mino-nav-link:hover::after {
+  transform: scaleX(1);
 }

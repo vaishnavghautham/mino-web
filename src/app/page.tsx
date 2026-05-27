@@ -7,7 +7,7 @@ import FaqSection from '@/components/FaqSection';
 export default function Home() {
   return (
     <div id="root">
-      <div className="min-h-screen bg-mino-cream text-mino-ink antialiased">
+      <div className="min-h-screen bg-mino-cream text-mino-ink antialiased selection:bg-mino-forest selection:text-mino-cream">
         <Header />
 
         <main>
@@ -18,7 +18,7 @@ export default function Home() {
                 
                 <div className="lg:col-span-7 space-y-6 animate-reveal">
                   <span className="mino-eyebrow">
-                    <span className="w-1.5 h-1.5 rounded-full bg-mino-forest"></span>
+                    <span className="w-1.5 h-1.5 rounded-full bg-mino-forest animate-pulse"></span>
                     Liquid Fund App for India
                   </span>
                   <h1 className="font-serif text-5xl md:text-6xl lg:text-7xl text-mino-ink leading-[1.2] tracking-tight">
@@ -33,7 +33,7 @@ export default function Home() {
                   
                   {/* App Download Badges */}
                   <div className="pt-4 flex flex-wrap items-center gap-4">
-                    <a href="https://apps.apple.com/in/app/zypay/id6452753963" target="_blank" rel="noopener noreferrer" className="mino-pill flex items-center gap-3 !py-3.5 !px-6 transition-all duration-300 hover:-translate-y-0.5 active:translate-y-0">
+                    <a href="https://apps.apple.com/in/app/zypay/id6452753963" target="_blank" rel="noopener noreferrer" className="mino-pill flex items-center gap-3 !py-3.5 !px-6">
                       <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="lucide lucide-apple"><path d="M12 20.94c1.5 0 2.75 1.06 4 1.06 3 0 6-8 6-12.22A4.91 4.91 0 0 0 17 5c-2.22 0-4 1.44-5 2-1-.56-2.78-2-5-2a4.9 4.9 0 0 0-5 4.78C2 14 5 22 8 22c1.25 0 2.5-1.06 4-1.06Z"/><path d="M10 2c1 .5 2 2 2 5"/></svg>
                       <div className="text-left">
                         <div className="text-[10px] uppercase opacity-60 leading-none">Download on the</div>
@@ -41,7 +41,7 @@ export default function Home() {
                       </div>
                     </a>
                     
-                    <a href="https://play.google.com/store/apps/details?id=com.neosurge.neosurge" target="_blank" rel="noopener noreferrer" className="mino-pill-outline flex items-center gap-3 !py-3.5 !px-6 transition-all duration-300 hover:-translate-y-0.5 active:translate-y-0">
+                    <a href="https://play.google.com/store/apps/details?id=com.neosurge.neosurge" target="_blank" rel="noopener noreferrer" className="mino-pill-outline flex items-center gap-3 !py-3.5 !px-6">
                       <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="lucide lucide-smartphone"><rect width="14" height="20" x="5" y="2" rx="2" ry="2"/><path d="M12 18h.01"/></svg>
                       <div className="text-left">
                         <div className="text-[10px] uppercase opacity-60 leading-none">Get it on</div>
@@ -51,20 +51,20 @@ export default function Home() {
                   </div>
 
                   <div className="pt-6 flex flex-wrap items-center gap-x-8 gap-y-4 text-xs text-mino-muted">
-                    <div className="flex items-center gap-2">
-                      <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" className="text-mino-forest"><path d="M20 6 9 17l-5-5"/></svg>
+                    <div className="flex items-center gap-2 group cursor-none">
+                      <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" className="text-mino-forest transition-transform duration-300 group-hover:scale-110"><path d="M20 6 9 17l-5-5"/></svg>
                       <span>Your money is 100% safe</span>
                     </div>
-                    <div className="flex items-center gap-2">
-                      <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" className="text-mino-forest"><path d="M20 6 9 17l-5-5"/></svg>
+                    <div className="flex items-center gap-2 group cursor-none">
+                      <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" className="text-mino-forest transition-transform duration-300 group-hover:scale-110"><path d="M20 6 9 17l-5-5"/></svg>
                       <span>Partnered with SEBI-regulated AMCs</span>
                     </div>
                   </div>
                 </div>
 
                 <div className="lg:col-span-5 flex justify-center relative animate-reveal delay-200">
-                  <div className="absolute -inset-4 bg-mino-cream-deep rounded-[3rem] -z-10 blur-xl opacity-50"></div>
-                  <div className="w-[320px] md:w-[360px] drop-shadow-[0_25px_50px_rgba(27,58,48,0.14)] hover:scale-[1.015] transition-all duration-700 ease-out">
+                  <div className="absolute -inset-4 bg-mino-cream-deep rounded-[3rem] -z-10 blur-2xl opacity-60 transition-opacity duration-1000 hover:opacity-80"></div>
+                  <div className="w-[320px] md:w-[360px] drop-shadow-[0_25px_50px_rgba(27,58,48,0.12)] hover:drop-shadow-[0_30px_60px_rgba(27,58,48,0.18)] hover:scale-[1.01] transition-all duration-1000 ease-[cubic-bezier(0.16,1,0.3,1)]">
                     <Image src="/hero-main.png" alt="Core App Dashboard Interface" width={450} height={900} priority className="w-full h-auto object-contain" />
                   </div>
                 </div>
@@ -90,9 +90,9 @@ export default function Home() {
                     Turn your milestones into achievements, faster. Pockets are flexible containers that let you seamlessly divide and organize your wealth for short-term and long-term milestones without managing multiple bank accounts.
                   </p>
                 </div>
-                <div className="lg:col-span-6 flex flex-col items-center justify-center lg:order-1 space-y-6">
-                  <div className="w-[280px] md:w-[320px] drop-shadow-xl hover:scale-[1.02] transition-all duration-500 ease-out">
-                    <Image src="/screen-pockets.png" alt="Mino goal-based savings pockets for liquid fund investments" width={400} height={800} />
+                <div className="lg:col-span-6 flex flex-col items-center justify-center lg:order-1">
+                  <div className="w-[280px] md:w-[320px] drop-shadow-xl hover:scale-[1.02] transition-all duration-700 ease-[cubic-bezier(0.16,1,0.3,1)]">
+                    <Image src="/screen-pockets.png" alt="Mino goal-based savings pockets for liquid fund investments" width={400} height={800} className="w-full h-auto" />
                   </div>
                 </div>
               </div>
@@ -108,9 +108,9 @@ export default function Home() {
                     Real-time liquidity routed directly to your linked primary bank account. Whether it is a weekend, a public holiday, or a late-night emergency; your earnings remain accessible within minutes. No lock-ins, no exceptions.
                   </p>
                 </div>
-                <div className="lg:col-span-6 flex flex-col items-center justify-center space-y-6">
-                  <div className="w-[280px] md:w-[320px] drop-shadow-xl hover:scale-[1.02] transition-all duration-500 ease-out">
-                    <Image src="/screen-withdraw.png" alt="Instant withdrawal from liquid fund to bank account on Mino" width={400} height={800} />
+                <div className="lg:col-span-6 flex flex-col items-center justify-center">
+                  <div className="w-[280px] md:w-[320px] drop-shadow-xl hover:scale-[1.02] transition-all duration-700 ease-[cubic-bezier(0.16,1,0.3,1)]">
+                    <Image src="/screen-withdraw.png" alt="Instant withdrawal from liquid fund to bank account on Mino" width={400} height={800} className="w-full h-auto" />
                   </div>
                 </div>
               </div>
@@ -126,9 +126,9 @@ export default function Home() {
                     A clear, transparent breakdown of how much you have earned over time. Watch your interest stack up every single morning with analytical views comparing your yield metrics directly against old bank alternatives.
                   </p>
                 </div>
-                <div className="lg:col-span-6 flex flex-col items-center justify-center lg:order-1 space-y-6">
-                  <div className="w-[280px] md:w-[320px] drop-shadow-xl hover:scale-[1.02] transition-all duration-500 ease-out">
-                    <Image src="/screen-earnings.png" alt="Comprehensive portfolio growth chart and dynamic statements" width={400} height={800} />
+                <div className="lg:col-span-6 flex flex-col items-center justify-center lg:order-1">
+                  <div className="w-[280px] md:w-[320px] drop-shadow-xl hover:scale-[1.02] transition-all duration-700 ease-[cubic-bezier(0.16,1,0.3,1)]">
+                    <Image src="/screen-earnings.png" alt="Comprehensive portfolio growth chart and dynamic statements" width={400} height={800} className="w-full h-auto" />
                   </div>
                 </div>
               </div>
@@ -148,10 +148,10 @@ export default function Home() {
               </div>
               
               <div className="grid grid-cols-2 gap-6 max-w-md mx-auto pt-4">
-                <div className="bg-white rounded-2xl p-6 border border-mino-line flex items-center justify-center h-24 shadow-sm transition-all duration-300 hover:-translate-y-0.5">
+                <div className="bg-white rounded-2xl p-6 border border-mino-line flex items-center justify-center h-24 shadow-sm transition-all duration-500 ease-[cubic-bezier(0.16,1,0.3,1)] hover:-translate-y-1 hover:shadow-md">
                   <Image src="/axis-logo.png" alt="Axis Asset Management Company Logo" width={130} height={45} className="h-11 w-auto object-contain" />
                 </div>
-                <div className="bg-white rounded-2xl p-6 border border-mino-line flex items-center justify-center h-24 shadow-sm transition-all duration-300 hover:-translate-y-0.5">
+                <div className="bg-white rounded-2xl p-6 border border-mino-line flex items-center justify-center h-24 shadow-sm transition-all duration-500 ease-[cubic-bezier(0.16,1,0.3,1)] hover:-translate-y-1 hover:shadow-md">
                   <Image src="/hdfc-logo.png" alt="HDFC Asset Management Company Logo" width={130} height={45} className="h-11 w-auto object-contain" />
                 </div>
               </div>
@@ -165,8 +165,8 @@ export default function Home() {
               <blockquote className="font-serif text-2xl md:text-3xl text-mino-ink leading-[1.35] tracking-tight">
                 &ldquo;We built Mino because we could not justify keeping our own salaries in a savings account anymore. The math did not make sense and we suspected we were not alone. Mino is the product we wanted for ourselves: quiet, safe, and finally honest about what your money is doing.&rdquo;
               </blockquote>
-              <div className="flex items-center gap-4 pt-2">
-                <div className="w-12 h-12 rounded-full bg-mino-forest text-mino-cream font-serif text-lg font-bold inline-flex items-center justify-center shadow-inner">M</div>
+              <div className="flex items-center gap-4 pt-2 group">
+                <div className="w-12 h-12 rounded-full bg-mino-forest text-mino-cream font-serif text-lg font-bold inline-flex items-center justify-center shadow-inner transition-transform duration-500 group-hover:rotate-12">M</div>
                 <div>
                   <div className="font-serif font-bold text-base text-mino-ink">The Mino team</div>
                   <div className="text-[10px] uppercase tracking-widest text-mino-muted font-medium mt-0.5">Pune, India</div>
@@ -177,6 +177,7 @@ export default function Home() {
 
           {/* Download Conversion Banner */}
           <section id="cta" className="bg-mino-forest text-mino-cream py-24 text-center relative overflow-hidden">
+            <div className="absolute inset-0 bg-[radial-gradient(circle_at_bottom,rgba(255,255,255,0.06),transparent_60%)] pointer-events-none"></div>
             <div className="container mx-auto px-6 max-w-3xl relative z-10 space-y-6">
               <h2 className="font-serif text-4xl md:text-6xl tracking-tight">Your money shouldn&apos;t sit idle.</h2>
               <p className="text-mino-cream/70 text-sm md:text-base max-w-md mx-auto leading-relaxed">
@@ -184,17 +185,17 @@ export default function Home() {
               </p>
               
               <div className="pt-4 flex flex-wrap justify-center items-center gap-4">
-                <a href="https://apps.apple.com/in/app/zypay/id6452753963" target="_blank" rel="noopener noreferrer" className="bg-mino-cream text-mino-ink hover:bg-mino-cream/90 font-medium px-8 py-3.5 rounded-full inline-flex items-center gap-3 transition-all duration-300 hover:-translate-y-0.5 text-sm">
+                <a href="https://apps.apple.com/in/app/zypay/id6452753963" target="_blank" rel="noopener noreferrer" className="bg-mino-cream text-mino-ink hover:bg-mino-cream/90 font-medium px-8 py-3.5 rounded-full inline-flex items-center gap-3 transition-all duration-500 ease-[cubic-bezier(0.16,1,0.3,1)] hover:-translate-y-0.5 shadow-sm text-sm">
                   Download for iOS
                 </a>
-                <a href="https://play.google.com/store/apps/details?id=com.neosurge.neosurge" target="_blank" rel="noopener noreferrer" className="border border-mino-cream/30 hover:bg-white/10 font-medium px-8 py-3.5 rounded-full inline-flex items-center gap-3 transition-all duration-300 hover:-translate-y-0.5 text-sm">
+                <a href="https://play.google.com/store/apps/details?id=com.neosurge.neosurge" target="_blank" rel="noopener noreferrer" className="border border-mino-cream/30 hover:bg-white/10 font-medium px-8 py-3.5 rounded-full inline-flex items-center gap-3 transition-all duration-500 ease-[cubic-bezier(0.16,1,0.3,1)] hover:-translate-y-0.5 text-sm">
                   Download for Android
                 </a>
               </div>
             </div>
           </section>
 
-          {/* Interactive Collapsable Accordion Block */}
+          {/* Interactive Collapsible Accordion Block */}
           <FaqSection />
         </main>
 
@@ -202,7 +203,7 @@ export default function Home() {
           <div className="container mx-auto px-6 py-12">
             <div className="grid md:grid-cols-12 gap-8 items-center">
               <div className="md:col-span-6 space-y-3">
-                <div className="inline-flex items-center justify-center bg-white px-0.5 py-0.5 rounded-lg">
+                <div className="inline-flex items-center justify-center bg-white px-1 py-1 rounded-xl shadow-sm transition-transform duration-500 hover:scale-105">
                   <Image src="/mino-logo.svg" alt="Mino Logo" width={38} height={35} className="w-12 h-9 object-contain" />
                 </div>
                 <p className="text-[11px] text-mino-cream/40 max-w-sm leading-relaxed">
@@ -210,7 +211,7 @@ export default function Home() {
                 </p>
               </div>
               <div className="md:col-span-6 md:text-right text-[11px] text-mino-cream/40 space-y-1">
-                <div>Partnerships & Queries: <a href="mailto:support@minomoney.in" className="text-mino-cream/70 hover:text-mino-cream underline transition-colors">support@minomoney.in</a></div>
+                <div>Partnerships & Queries: <a href="mailto:support@minomoney.in" className="text-mino-cream/70 hover:text-mino-cream underline transition-colors duration-300">support@minomoney.in</a></div>
                 <div>© 2026 Mino Money. All rights reserved.</div>
                 <div className="text-[10px] text-mino-cream/30 pt-2">Mutual fund investments are subject to market risks. Read all scheme related documents carefully.</div>
               </div>

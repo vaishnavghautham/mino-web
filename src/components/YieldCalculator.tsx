@@ -1,10 +1,10 @@
 'use client';
 
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 
 export default function YieldCalculator() {
-  // Initial state set to 2,00,000 to match your design exactly
   const [balance, setBalance] = useState<number>(200000);
+  const [isChanging, setIsChanging] = useState<boolean>(false);
 
   const minBalance = 10000;
   const maxBalance = 2500000;
@@ -14,7 +14,13 @@ export default function YieldCalculator() {
   const moneyLost = minoReturn - savingsReturn;
   const lostPerHour = (moneyLost / (365 * 24)).toFixed(2);
 
-  // Helper function to handle Indian currency localization format
+  // Trigger a subtle text scale/glow effect when data cycles
+  useEffect(() => {
+    setIsChanging(true);
+    const timeout = setTimeout(() => setIsChanging(false), 150);
+    return () => clearTimeout(timeout);
+  }, [balance]);
+
   const formatCurrency = (num: number) => {
     return new Intl.NumberFormat('en-IN', {
       maximumFractionDigits: 0,
@@ -22,12 +28,12 @@ export default function YieldCalculator() {
   };
 
   return (
-    <section id="yield" className="bg-mino-cream py-24 border-t border-mino-line">
+    <section id="yield" className="bg-mino-cream py-24 border-t border-mino-line overflow-hidden">
       <div className="container mx-auto px-6">
         <div className="grid lg:grid-cols-2 gap-16 items-center">
           
           {/* Left Block Column */}
-          <div className="space-y-6">
+          <div className="space-y-6 transform transition-all duration-700 ease-out">
             <span className="mino-eyebrow">Your numbers</span>
             <h2 className="font-serif text-4xl md:text-5xl text-mino-ink leading-[1.05] tracking-tight">
               See what your idle cash is costing you.
@@ -38,13 +44,15 @@ export default function YieldCalculator() {
           </div>
 
           {/* Interactive Card Container */}
-          <div className="bg-white rounded-[2rem] border border-mino-line p-8 md:p-10 shadow-[0_30px_60px_-30px_rgba(20,40,30,0.12)]">
+          <div className="bg-white rounded-[2rem] border border-mino-line p-8 md:p-10 shadow-[0_30px_60px_-30px_rgba(20,40,30,0.12)] hover:shadow-[0_40px_80px_-20px_rgba(20,40,30,0.16)] transition-all duration-500 ease-out">
             <div className="flex items-baseline justify-between mb-3">
               <span className="text-xs uppercase tracking-widest text-mino-muted font-medium">Idle balance</span>
-              <span className="font-serif text-3xl font-bold text-mino-ink tabular-nums">₹{formatCurrency(balance)}</span>
+              <span className={`font-serif text-3xl font-bold text-mino-ink tabular-nums transition-all duration-200 ${isChanging ? 'text-mino-forest scale-[1.01]' : ''}`}>
+                ₹{formatCurrency(balance)}
+              </span>
             </div>
 
-            {/* Native Slider Input Element */}
+            {/* Custom Slider Track Element */}
             <div className="relative my-6 flex items-center">
               <input
                 type="range"
@@ -53,7 +61,7 @@ export default function YieldCalculator() {
                 step={10000}
                 value={balance}
                 onChange={(e) => setBalance(Number(e.target.value))}
-                className="w-full h-2 bg-mino-line rounded-full appearance-none cursor-pointer accent-mino-forest"
+                className="w-full h-1.5 bg-mino-line rounded-full appearance-none cursor-pointer accent-mino-forest transition-all"
                 style={{
                   background: `linear-gradient(to right, #1B3A30 0%, #1B3A30 ${((balance - minBalance) / (maxBalance - minBalance)) * 100}%, #E5E2D9 ${((balance - minBalance) / (maxBalance - minBalance)) * 100}%, #E5E2D9 100%)`
                 }}
@@ -67,12 +75,12 @@ export default function YieldCalculator() {
 
             {/* Real-time Calculation Matrix */}
             <div className="grid grid-cols-2 gap-px bg-mino-line rounded-2xl overflow-hidden border border-mino-line">
-              <div className="bg-mino-cream p-5">
+              <div className="bg-mino-cream p-5 group transition-colors duration-300 hover:bg-mino-cream-deep/60">
                 <div className="text-[11px] uppercase tracking-widest text-mino-muted mb-2 font-medium">Savings a/c · 2.5%</div>
                 <div className="font-serif text-2xl text-mino-ink/70 font-semibold tabular-nums">₹{formatCurrency(savingsReturn)}</div>
                 <div className="text-xs text-mino-muted mt-1">per year</div>
               </div>
-              <div className="bg-mino-forest p-5">
+              <div className="bg-mino-forest p-5 transition-all duration-300 hover:bg-[#152e26]">
                 <div className="text-[11px] uppercase tracking-widest text-mino-cream/60 mb-2 font-medium">Mino · ~7%</div>
                 <div className="font-serif text-2xl text-mino-cream font-bold tabular-nums">₹{formatCurrency(minoReturn)}</div>
                 <div className="text-xs text-mino-cream/70 mt-1">per year</div>
@@ -80,14 +88,16 @@ export default function YieldCalculator() {
             </div>
 
             {/* Dynamic Growth Loss Notification Container */}
-            <div className="mt-6 rounded-2xl p-5 border bg-mino-cream-deep border-mino-line">
+            <div className="mt-6 rounded-2xl p-5 border bg-mino-cream-deep border-mino-line transition-all duration-300">
               <div className="flex items-baseline justify-between">
                 <span className="text-sm font-medium text-mino-ink/70">You&apos;re losing</span>
-                <span className="font-serif text-3xl font-bold tabular-nums text-mino-ink">₹{formatCurrency(moneyLost)} / yr</span>
+                <span className={`font-serif text-3xl font-bold tabular-nums text-mino-ink transition-all duration-300 ${isChanging ? 'text-red-800' : ''}`}>
+                  ₹{formatCurrency(moneyLost)} / yr
+                </span>
               </div>
               <div className="mt-2 flex items-center justify-between text-xs text-mino-muted">
                 <span>Cost of waiting</span>
-                <span className="tabular-nums font-medium">≈ ₹{lostPerHour} every hour</span>
+                <span className="tabular-nums font-medium text-mino-ink/80">≈ ₹{lostPerHour} every hour</span>
               </div>
             </div>
 
