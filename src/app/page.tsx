@@ -21,9 +21,11 @@ export default function Home() {
                     <span className="w-1.5 h-1.5 rounded-full bg-mino-forest"></span>
                     Liquid Fund App for India
                   </span>
-                  <h1 className="font-serif text-5xl md:text-6xl lg:text-7xl text-mino-ink leading-[1.05] tracking-tight">
+                  <h1 className="font-serif text-5xl md:text-6xl lg:text-7xl text-mino-ink leading-[1.2] tracking-tight">
                     Earn up to 7% on your idle savings.<br />
-                    <em className="not-italic text-mino-forest font-semibold">Invest and withdraw instantly.</em>
+                    <em className="not-italic text-mino-forest font-semibold">
+                      Invest and withdraw instantly.
+                    </em>
                   </h1>
                   <p className="text-lg md:text-xl text-mino-ink/70 max-w-xl leading-relaxed">
                     Up to 3x more than your savings account. Park your money in liquid funds with zero lock-in and no hidden charges.
@@ -201,7 +203,7 @@ export default function Home() {
             <div className="grid md:grid-cols-12 gap-8 items-center">
               <div className="md:col-span-6 space-y-3">
                 <div className="inline-flex items-center justify-center bg-white px-0.5 py-0.5 rounded-lg">
-                  <Image src="/mino-logo.png" alt="Mino Logo" width={38} height={35} className="w-12 h-9 object-contain" />
+                  <Image src="/mino-logo.svg" alt="Mino Logo" width={38} height={35} className="w-12 h-9 object-contain" />
                 </div>
                 <p className="text-[11px] text-mino-cream/40 max-w-sm leading-relaxed">
                   Mino Money is a digital platform operated by Bullsurge Private Limited, an AMFI-registered Mutual Fund Distributor holding ARN-185445.

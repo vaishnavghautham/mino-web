@@ -16,11 +16,11 @@ export default function Header() {
           {/* Logo */}
           <a href="#" className="flex items-center">
             <Image 
-              src="/mino-logo.png" 
+              src="/mino-logo.svg" 
               alt="Mino Logo" 
               width={70} 
               height={64} 
-              className="w-17 h-15 object-contain"
+              className="w-19 h-16 object-contain"
               priority
             />
           </a>
