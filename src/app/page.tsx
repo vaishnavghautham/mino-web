@@ -16,23 +16,29 @@ export default function Home() {
             <div className="container mx-auto px-6">
               <div className="grid lg:grid-cols-12 gap-12 items-center">
                 
-                <div className="lg:col-span-7 space-y-6 animate-reveal">
-                  <span className="mino-eyebrow">
-                    <span className="w-1.5 h-1.5 rounded-full bg-mino-forest animate-pulse"></span>
-                    Liquid Fund App for India
-                  </span>
-                  <h1 className="font-serif text-5xl md:text-6xl lg:text-7xl text-mino-ink leading-[1.2] tracking-tight">
+                {/* Left Column Text Matrix */}
+                <div className="lg:col-span-7 space-y-6">
+                  
+                  <div className="animate-slide-up delay-first">
+                    <span className="mino-eyebrow">
+                      <span className="w-1.5 h-1.5 rounded-full bg-mino-forest animate-pulse"></span>
+                      Liquid Fund App for India
+                    </span>
+                  </div>
+
+                  <h1 className="font-serif text-5xl md:text-6xl lg:text-7xl text-mino-ink leading-[1.2] tracking-tight animate-slide-up delay-second">
                     Earn up to 7% on your idle savings.<br />
                     <em className="not-italic text-mino-forest font-semibold">
                       Invest and withdraw instantly.
                     </em>
                   </h1>
-                  <p className="text-lg md:text-xl text-mino-ink/70 max-w-xl leading-relaxed">
+
+                  <p className="text-lg md:text-xl text-mino-ink/70 max-w-xl leading-relaxed animate-slide-up delay-third">
                     Up to 3x more than your savings account. Park your money in liquid funds with zero lock-in and no hidden charges.
                   </p>
                   
                   {/* App Download Badges */}
-                  <div className="pt-4 flex flex-wrap items-center gap-4">
+                  <div className="pt-4 flex flex-wrap items-center gap-4 animate-slide-up delay-fourth">
                     <a href="https://apps.apple.com/in/app/zypay/id6452753963" target="_blank" rel="noopener noreferrer" className="mino-pill flex items-center gap-3 !py-3.5 !px-6">
                       <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="lucide lucide-apple"><path d="M12 20.94c1.5 0 2.75 1.06 4 1.06 3 0 6-8 6-12.22A4.91 4.91 0 0 0 17 5c-2.22 0-4 1.44-5 2-1-.56-2.78-2-5-2a4.9 4.9 0 0 0-5 4.78C2 14 5 22 8 22c1.25 0 2.5-1.06 4-1.06Z"/><path d="M10 2c1 .5 2 2 2 5"/></svg>
                       <div className="text-left">
@@ -50,7 +56,8 @@ export default function Home() {
                     </a>
                   </div>
 
-                  <div className="pt-6 flex flex-wrap items-center gap-x-8 gap-y-4 text-xs text-mino-muted">
+                  {/* Trust Indicators */}
+                  <div className="pt-6 flex flex-wrap items-center gap-x-8 gap-y-4 text-xs text-mino-muted animate-slide-up delay-fifth">
                     <div className="flex items-center gap-2 group cursor-none">
                       <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" className="text-mino-forest transition-transform duration-300 group-hover:scale-110"><path d="M20 6 9 17l-5-5"/></svg>
                       <span>Your money is 100% safe</span>
@@ -62,9 +69,10 @@ export default function Home() {
                   </div>
                 </div>
 
-                <div className="lg:col-span-5 flex justify-center relative animate-reveal delay-200">
-                  <div className="absolute -inset-4 bg-mino-cream-deep rounded-[3rem] -z-10 blur-2xl opacity-60 transition-opacity duration-1000 hover:opacity-80"></div>
-                  <div className="w-[320px] md:w-[360px] drop-shadow-[0_25px_50px_rgba(27,58,48,0.12)] hover:drop-shadow-[0_30px_60px_rgba(27,58,48,0.18)] hover:scale-[1.01] transition-all duration-1000 ease-[cubic-bezier(0.16,1,0.3,1)]">
+                {/* Right Column Dashboard Image Showcase */}
+                <div className="lg:col-span-5 flex justify-center relative animate-slide-up delay-image">
+                  <div className="absolute -inset-4 bg-mino-cream-deep rounded-[3rem] -z-10 blur-3xl opacity-60 transition-opacity duration-1000 hover:opacity-80"></div>
+                  <div className="w-[320px] md:w-[360px] drop-shadow-[0_25px_50px_rgba(27,58,48,0.12)] hover:drop-shadow-[0_30px_60px_rgba(27,58,48,0.18)] hover:scale-[1.015] transition-all duration-1000 ease-[cubic-bezier(0.16,1,0.3,1)]">
                     <Image src="/hero-main.png" alt="Core App Dashboard Interface" width={450} height={900} priority className="w-full h-auto object-contain" />
                   </div>
                 </div>
@@ -195,7 +203,6 @@ export default function Home() {
             </div>
           </section>
 
-          {/* Interactive Collapsible Accordion Block */}
           <FaqSection />
         </main>
 

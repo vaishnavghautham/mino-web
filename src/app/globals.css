@@ -47,28 +47,58 @@ body {
   font-family: var(--font-mono);
 }
 
-/* Native Premium Entry Reveal Animations */
-.animate-reveal {
-  opacity: 0;
-  animation: minoReveal 1.2s cubic-bezier(0.16, 1, 0.3, 1) forwards;
-  will-change: transform, opacity, filter;
-}
+/* ==========================================
+   FIXED PREMIUM SLIDING ANIMATIONS (NATIVE CSS)
+   ========================================== */
 
-.delay-100 { animation-delay: 100ms; }
-.delay-200 { animation-delay: 200ms; }
-.delay-300 { animation-delay: 300ms; }
-
-@keyframes minoReveal {
+@keyframes minoSlideUp {
   0% {
     opacity: 0;
     transform: translateY(30px);
-    filter: blur(8px);
   }
   100% {
     opacity: 1;
     transform: translateY(0);
-    filter: blur(0);
   }
+}
+
+.animate-slide-up {
+  opacity: 0;
+  animation: minoSlideUp 1.2s cubic-bezier(0.16, 1, 0.3, 1) forwards !important;
+  will-change: transform, opacity;
+}
+
+/* Hardcoded delays to bypass v4 optimization drops */
+.delay-first  { animation-delay: 100ms !important; }
+.delay-second { animation-delay: 250ms !important; }
+.delay-third  { animation-delay: 400ms !important; }
+.delay-fourth { animation-delay: 550ms !important; }
+.delay-fifth  { animation-delay: 700ms !important; }
+.delay-image  { animation-delay: 450ms !important; }
+
+
+/* Premium Header Link Underline Tracking Effect */
+.mino-nav-link {
+  position: relative;
+  display: inline-block;
+}
+
+.mino-nav-link::after {
+  content: '';
+  position: absolute;
+  width: 100%;
+  transform: scaleX(0);
+  height: 1px;
+  bottom: -4px;
+  left: 0;
+  background-color: #1B3A30;
+  transform-origin: bottom center;
+  transition: transform 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+  will-change: transform;
+}
+
+.mino-nav-link:hover::after {
+  transform: scaleX(1);
 }
 
 /* Custom Minimalist Styling for Range Input Slider */
@@ -90,28 +120,4 @@ input[type="range"]::-webkit-slider-thumb:hover {
 
 input[type="range"]::-webkit-slider-thumb:active {
   transform: scale(0.95);
-}
-
-/* Premium Header Link Underline Tracking Effect */
-.mino-nav-link {
-  position: relative;
-  display: inline-block;
-}
-
-.mino-nav-link::after {
-  content: '';
-  position: absolute;
-  width: 100%;
-  transform: scaleX(0);
-  height: 1px;
-  bottom: -4px;
-  left: 0;
-  background-color: #1B3A30; /* var(--color-mino-forest) */
-  transform-origin: bottom center;
-  transition: transform 0.4s cubic-bezier(0.16, 1, 0.3, 1);
-  will-change: transform;
-}
-
-.mino-nav-link:hover::after {
-  transform: scaleX(1);
 }
