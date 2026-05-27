@@ -1,0 +1,70 @@
+@import "tailwindcss";
+
+@theme {
+  /* Custom Brand Colors */
+  --color-mino-cream: #F8F6F0;
+  --color-mino-cream-deep: #F2EFE8;
+  --color-mino-ink: #101815;
+  --color-mino-forest: #1B3A30;
+  --color-mino-line: #E5E2D9;
+  --color-mino-muted: #7A827E;
+  
+  --color-primary: #1B3A30;
+  --color-secondary: #E5E2D9;
+  --color-background: #F8F6F0;
+
+  /* Font mappings tied to layout variables */
+  --font-serif: var(--font-serif), serif;
+  --font-sans: var(--font-sans), sans-serif;
+
+  /* Custom Animations */
+  --animate-pulse-soft: pulse 3s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+  --animate-fade-in: fadeIn 0.5s ease-in-out;
+}
+
+/* Custom UI Utilities */
+.mino-pill {
+  @apply inline-flex items-center justify-center rounded-full bg-mino-forest text-mino-cream px-6 py-3 text-sm font-medium hover:bg-mino-forest/90 transition-all;
+}
+
+.mino-pill-outline {
+  @apply inline-flex items-center justify-center rounded-full border border-mino-line bg-transparent text-mino-ink px-6 py-3 text-sm font-medium hover:bg-mino-line/30 transition-all;
+}
+
+.mino-eyebrow {
+  @apply flex items-center gap-2 text-[10px] sm:text-xs uppercase tracking-[0.18em] text-mino-muted font-medium;
+}
+
+.mino-card {
+  @apply bg-white rounded-[2rem] border border-mino-line p-8 md:p-10 shadow-[0_20px_40px_-24px_rgba(20,40,30,0.08)] transition-all duration-300;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+/* ==========================================================
+   NATIVE CSS ANIMATIONS (Guaranteed to run in Tailwind v4)
+   ========================================================== */
+
+.animate-reveal {
+  animation: minoReveal 0.9s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
+
+/* Hardcoded delays using standard CSS selectors */
+.delay-100 { animation-delay: 100ms; }
+.delay-200 { animation-delay: 200ms; }
+.delay-300 { animation-delay: 300ms; }
+
+@keyframes minoReveal {
+  0% {
+    opacity: 0;
+    transform: translateY(20px);
+    filter: blur(4px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+    filter: blur(0);
+  }
+}
