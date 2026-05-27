@@ -25,7 +25,7 @@ export default function FaqSection() {
     },
     {
       question: "What is the minimum amount to start on Mino?",
-      answer: "You can start with as little as Rs 500. There is no minimum holding period and no penalty for withdrawing early."
+      answer: "You can start with as little as Rs 100. There is no minimum holding period and no penalty for withdrawing early."
     }
   ];
 
