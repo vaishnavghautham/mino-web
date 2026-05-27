@@ -1,16 +1,23 @@
 import type { Metadata } from "next";
-import { Inter, Playfair_Display } from "next/font/google";
+import { Merriweather, Inconsolata } from "next/font/google";
 import "./globals.css";
 
-const inter = Inter({ subsets: ["latin"], variable: '--font-sans' });
-const playfair = Playfair_Display({ subsets: ["latin"], variable: '--font-serif' });
+const merriweather = Merriweather({ 
+  subsets: ["latin"], 
+  weight: ["300", "400", "700", "900"],
+  variable: '--font-serif' 
+});
+
+const inconsolata = Inconsolata({ 
+  subsets: ["latin"], 
+  variable: '--font-mono' 
+});
 
 export const metadata: Metadata = {
   title: "Mino Money - Earn Up to 7% on Idle Savings. Withdraw in Minutes.",
   description: "Mino parks your idle cash in liquid mutual funds and earns you up to 7% a year. Withdraw to your bank in minutes, any day. No lock-in, no hidden charges. A smarter savings account alternative for India.",
   keywords: "liquid fund app India, savings account alternative India, park idle money India, earn more than savings account, instant redemption liquid fund, idle cash earning app, high yield savings India, liquid mutual fund withdrawal, Mino Money, Mino, smart savings India",
   authors: [{ name: "Mino Money" }],
-  themeColor: "#1B3A30",
   openGraph: {
     title: "Mino Money — Earn Up to 7% on Your Savings",
     description: "Park idle cash in liquid funds. Earn up to 7% a year, withdraw in minutes. No lock-in, no complexity. Built for India.",
@@ -96,11 +103,7 @@ const appSchema = {
   "name": "Mino Money",
   "applicationCategory": "FinanceApplication",
   "operatingSystem": "iOS, Android",
-  "offers": {
-    "@type": "Offer",
-    "price": "0",
-    "priceCurrency": "INR"
-  },
+  "offers": { "@type": "Offer", "price": "0", "priceCurrency": "INR" },
   "description": "Park idle savings in liquid mutual funds. Earn up to 7% a year, withdraw to your bank in minutes. No lock-in.",
   "url": "https://minomoney.in",
   "author": {
@@ -121,9 +124,7 @@ const orgSchema = {
     "email": "support@minomoney.in",
     "contactType": "customer support"
   },
-  "sameAs": [
-    "https://twitter.com/MinoMoney"
-  ]
+  "sameAs": ["https://twitter.com/MinoMoney"]
 };
 
 export default function RootLayout({
@@ -134,20 +135,11 @@ export default function RootLayout({
   return (
     <html lang="en">
       <head>
-        <script
-          type="application/ld+json"
-          dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }}
-        />
-        <script
-          type="application/ld+json"
-          dangerouslySetInnerHTML={{ __html: JSON.stringify(appSchema) }}
-        />
-        <script
-          type="application/ld+json"
-          dangerouslySetInnerHTML={{ __html: JSON.stringify(orgSchema) }}
-        />
+        <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }} />
+        <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(appSchema) }} />
+        <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(orgSchema) }} />
       </head>
-      <body className={`${inter.variable} ${playfair.variable} font-sans min-h-screen bg-mino-cream text-mino-ink`}>
+      <body className={`${merriweather.variable} ${inconsolata.variable} font-mono min-h-screen bg-mino-cream text-mino-ink antialiased`}>
         {children}
       </body>
     </html>

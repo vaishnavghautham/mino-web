@@ -13,9 +13,9 @@
   --color-secondary: #E5E2D9;
   --color-background: #F8F6F0;
 
-  /* Font mappings tied to layout variables */
+  /* Font mappings synchronized with layout font declarations */
   --font-serif: var(--font-serif), serif;
-  --font-sans: var(--font-sans), sans-serif;
+  --font-mono: var(--font-mono), monospace;
 
   /* Custom Animations */
   --animate-pulse-soft: pulse 3s cubic-bezier(0.4, 0, 0.6, 1) infinite;
@@ -43,15 +43,15 @@ html {
   scroll-behavior: smooth;
 }
 
-/* ==========================================================
-   NATIVE CSS ANIMATIONS (Guaranteed to run in Tailwind v4)
-   ========================================================== */
+body {
+  font-family: var(--font-mono);
+}
 
+/* Native CSS Animations */
 .animate-reveal {
   animation: minoReveal 0.9s cubic-bezier(0.16, 1, 0.3, 1) forwards;
 }
 
-/* Hardcoded delays using standard CSS selectors */
 .delay-100 { animation-delay: 100ms; }
 .delay-200 { animation-delay: 200ms; }
 .delay-300 { animation-delay: 300ms; }
