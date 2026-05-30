@@ -79,7 +79,7 @@ export default function Home() {
 
                 <div className="lg:col-span-5 flex justify-center relative animate-reveal delay-200">
                   <div className="absolute -inset-4 bg-mino-cream-deep rounded-[3rem] -z-10 blur-xl opacity-50"></div>
-                  <div className="w-[320px] md:w-[360px] drop-shadow-[0_25px_50px_rgba(27,58,48,0.14)] hover:scale-[1.015] transition-all duration-700 ease-out">
+                  <div className="w-[320px] md:w-[360px] mx-auto drop-shadow-[0_25px_50px_rgba(27,58,48,0.14)] hover:scale-[1.015] transition-all duration-700 ease-out">
                     <Image src="/hero-main.svg" alt="Core App Dashboard Interface" width={450} height={900} priority className="w-full h-auto object-contain" />
                   </div>
                 </div>
@@ -106,7 +106,7 @@ export default function Home() {
                   </p>
                 </div>
                 <div className="lg:col-span-6 flex flex-col items-center justify-center lg:order-1 space-y-6">
-                  <div className="w-[280px] md:w-[320px] drop-shadow-xl hover:scale-[1.02] transition-all duration-500 ease-out">
+                  <div className="w-[280px] md:w-[320px] mx-auto drop-shadow-xl hover:scale-[1.02] transition-all duration-500 ease-out">
                     <Image src="/screen-pockets.svg" alt="Mino goal-based savings pockets for liquid fund investments" width={400} height={800} />
                   </div>
                 </div>
@@ -124,7 +124,7 @@ export default function Home() {
                   </p>
                 </div>
                 <div className="lg:col-span-6 flex flex-col items-center justify-center space-y-6">
-                  <div className="w-[280px] md:w-[320px] drop-shadow-xl hover:scale-[1.02] transition-all duration-500 ease-out">
+                  <div className="w-[280px] md:w-[320px] mx-auto drop-shadow-xl hover:scale-[1.02] transition-all duration-500 ease-out">
                     <Image src="/screen-withdraw.svg" alt="Instant withdrawal from liquid fund to bank account on Mino" width={400} height={800} />
                   </div>
                 </div>
@@ -142,7 +142,7 @@ export default function Home() {
                   </p>
                 </div>
                 <div className="lg:col-span-6 flex flex-col items-center justify-center lg:order-1 space-y-6">
-                  <div className="w-[280px] md:w-[320px] drop-shadow-xl hover:scale-[1.02] transition-all duration-500 ease-out">
+                  <div className="w-[280px] md:w-[320px] mx-auto drop-shadow-xl hover:scale-[1.02] transition-all duration-500 ease-out">
                     <Image src="/screen-earnings.svg" alt="Comprehensive portfolio growth chart and dynamic statements" width={400} height={800} />
                   </div>
                 </div>
@@ -162,7 +162,7 @@ export default function Home() {
                 </p>
               </div>
               
-              <div className="grid grid-cols-4 gap-6 max-w-xl mx-auto pt-4">
+              <div className="grid grid-cols-2 md:grid-cols-4 gap-4 md:gap-6 max-w-xl mx-auto pt-4">
                 <div className="bg-white rounded-2xl p-6 border border-mino-line flex items-center justify-center h-28 shadow-sm transition-all duration-300 hover:-translate-y-0.5">
                   <Image src="/axis-logo.png" alt="Axis Asset Management Company Logo" width={180} height={60} className="h-16 w-auto object-contain" />
                 </div>
