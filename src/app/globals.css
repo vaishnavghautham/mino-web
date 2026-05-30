@@ -24,11 +24,11 @@
 
 /* Custom UI Utilities */
 .mino-pill {
-  @apply inline-flex items-center justify-center rounded-full bg-mino-forest text-mino-cream px-6 py-3 text-sm font-medium hover:bg-mino-forest/90 transition-all duration-500 ease-[cubic-bezier(0.16,1,0.3,1)] hover:-translate-y-0.5 active:translate-y-0 shadow-sm hover:shadow-md;
+  @apply inline-flex items-center justify-center rounded-full bg-mino-forest text-mino-cream px-6 py-3 text-sm font-medium hover:bg-mino-forest/90 transition-all;
 }
 
 .mino-pill-outline {
-  @apply inline-flex items-center justify-center rounded-full border border-mino-line bg-transparent text-mino-ink px-6 py-3 text-sm font-medium hover:bg-mino-line/30 transition-all duration-500 ease-[cubic-bezier(0.16,1,0.3,1)] hover:-translate-y-0.5 active:translate-y-0;
+  @apply inline-flex items-center justify-center rounded-full border border-mino-line bg-transparent text-mino-ink px-6 py-3 text-sm font-medium hover:bg-mino-line/30 transition-all;
 }
 
 .mino-eyebrow {
@@ -36,7 +36,7 @@
 }
 
 .mino-card {
-  @apply bg-white rounded-[2rem] border border-mino-line p-8 md:p-10 shadow-[0_20px_40px_-24px_rgba(20,40,30,0.08)] transition-all duration-500 ease-[cubic-bezier(0.16,1,0.3,1)];
+  @apply bg-white rounded-[2rem] border border-mino-line p-8 md:p-10 shadow-[0_20px_40px_-24px_rgba(20,40,30,0.08)] transition-all duration-300;
 }
 
 html {
@@ -47,74 +47,24 @@ body {
   font-family: var(--font-mono);
 }
 
-/* Premium Staggered Sliding Reveal Core */
-.animate-slide-up {
-  opacity: 0;
-  transform: translateY(40px);
-  animation: minoSlideUp 1.4s cubic-bezier(0.16, 1, 0.3, 1) forwards;
-  will-change: transform, opacity;
+/* Native CSS Animations */
+.animate-reveal {
+  animation: minoReveal 0.9s cubic-bezier(0.16, 1, 0.3, 1) forwards;
 }
 
-/* Precise step-delays for organic staggering execution */
-.delay-first  { animation-delay: 100ms; }
-.delay-second { animation-delay: 250ms; }
-.delay-third  { animation-delay: 400ms; }
-.delay-fourth { animation-delay: 550ms; }
-.delay-fifth  { animation-delay: 700ms; }
-.delay-image  { animation-delay: 350ms; }
+.delay-100 { animation-delay: 100ms; }
+.delay-200 { animation-delay: 200ms; }
+.delay-300 { animation-delay: 300ms; }
 
-@keyframes minoSlideUp {
+@keyframes minoReveal {
   0% {
     opacity: 0;
-    transform: translateY(40px);
+    transform: translateY(20px);
+    filter: blur(4px);
   }
   100% {
     opacity: 1;
     transform: translateY(0);
+    filter: blur(0);
   }
-}
-
-/* Premium Header Link Underline Tracking Effect */
-.mino-nav-link {
-  position: relative;
-  display: inline-block;
-}
-
-.mino-nav-link::after {
-  content: '';
-  position: absolute;
-  width: 100%;
-  transform: scaleX(0);
-  height: 1px;
-  bottom: -4px;
-  left: 0;
-  background-color: #1B3A30;
-  transform-origin: bottom center;
-  transition: transform 0.4s cubic-bezier(0.16, 1, 0.3, 1);
-  will-change: transform;
-}
-
-.mino-nav-link:hover::after {
-  transform: scaleX(1);
-}
-
-/* Custom Minimalist Styling for Range Input Slider */
-input[type="range"]::-webkit-slider-thumb {
-  appearance: none;
-  width: 20px;
-  height: 20px;
-  border-radius: 50%;
-  background: #1B3A30;
-  border: 2px solid #F8F6F0;
-  box-shadow: 0 4px 10px rgba(27, 58, 48, 0.2);
-  transition: transform 0.2s cubic-bezier(0.16, 1, 0.3, 1);
-  will-change: transform;
-}
-
-input[type="range"]::-webkit-slider-thumb:hover {
-  transform: scale(1.15);
-}
-
-input[type="range"]::-webkit-slider-thumb:active {
-  transform: scale(0.95);
 }

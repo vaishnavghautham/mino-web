@@ -41,22 +41,22 @@ export default function FaqSection() {
           {faqData.map((item, index) => {
             const isOpen = openIndex === index;
             return (
-              <div key={index} className="border border-mino-line/60 rounded-2xl bg-white overflow-hidden shadow-sm hover:border-mino-line transition-all duration-500">
+              <div key={index} className="border border-mino-line/60 rounded-2xl bg-white overflow-hidden transition-all duration-300">
                 <button
                   onClick={() => setOpenIndex(isOpen ? null : index)}
                   className="w-full flex items-center justify-between p-6 text-left focus:outline-none group cursor-pointer"
                   aria-expanded={isOpen}
                 >
-                  <h3 className="font-serif text-base md:text-lg font-bold text-mino-ink pr-4 group-hover:text-mino-forest transition-colors duration-300">
+                  <h3 className="font-serif text-base md:text-lg font-bold text-mino-ink pr-4 group-hover:text-mino-forest transition-colors">
                     {item.question}
                   </h3>
-                  <span className={`transform transition-transform duration-500 text-mino-muted flex-shrink-0 ${isOpen ? 'rotate-180 text-mino-forest' : ''}`}>
+                  <span className={`transform transition-transform duration-300 text-mino-muted flex-shrink-0 ${isOpen ? 'rotate-180' : ''}`}>
                     <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="m6 9 6 6 6-6"/></svg>
                   </span>
                 </button>
                 
                 <div 
-                  className={`transition-all duration-500 ease-[cubic-bezier(0.16,1,0.3,1)] overflow-hidden ${isOpen ? 'max-h-[500px] border-t border-mino-line/30' : 'max-h-0'}`}
+                  className={`transition-all duration-300 ease-in-out overflow-hidden ${isOpen ? 'max-h-[500px] border-t border-mino-line/30' : 'max-h-0'}`}
                 >
                   <p className="p-6 text-sm text-mino-ink/70 leading-relaxed bg-mino-cream/10">
                     {item.answer}
