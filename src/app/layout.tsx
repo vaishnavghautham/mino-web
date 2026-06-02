@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import { Merriweather, Inconsolata } from "next/font/google";
 import "./globals.css";
+import { Analytics } from "@vercel/analytics/next"
 
 const merriweather = Merriweather({ 
   subsets: ["latin"], 
@@ -141,6 +142,7 @@ export default function RootLayout({
       </head>
       <body className={`${merriweather.variable} ${inconsolata.variable} font-mono min-h-screen bg-mino-cream text-mino-ink antialiased`}>
         {children}
+        <Analytics />
       </body>
     </html>
   );
