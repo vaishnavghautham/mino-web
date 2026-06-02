@@ -201,7 +201,7 @@ export default function Home() {
             <div className="container mx-auto px-6 max-w-3xl relative z-10 space-y-6">
               <h2 className="font-serif text-4xl md:text-6xl tracking-tight">Your money shouldn&apos;t sit idle.</h2>
               <p className="text-mino-cream/70 text-sm md:text-base max-w-md mx-auto leading-relaxed">
-                Setup completion takes under two minutes. Link your configuration rules to clear the idle cash deficit today.
+                Setup completion takes under two minutes. 
               </p>
               
               <div className="pt-4 flex flex-wrap justify-center items-center gap-4">
