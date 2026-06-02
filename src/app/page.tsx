@@ -2,6 +2,7 @@
 
 import React, { useState } from 'react';
 import Image from 'next/image';
+import AppDownloadLink from '@/components/AppDownloadLink';
 import YieldCalculator from '@/components/YieldCalculator';
 import Header from '@/components/Header';
 import FaqSection from '@/components/FaqSection';
@@ -48,21 +49,21 @@ export default function Home() {
                   
                   {/* App Download Badges */}
                   <div className="pt-4 flex flex-wrap items-center gap-4">
-                    <a href="https://apps.apple.com/in/app/zypay/id6452753963" target="_blank" rel="noopener noreferrer" className="mino-pill flex items-center gap-3 !py-3.5 !px-6 transition-all duration-300 hover:-translate-y-0.5 active:translate-y-0">
+                    <AppDownloadLink platform="ios" className="mino-pill flex items-center gap-3 !py-3.5 !px-6 transition-all duration-300 hover:-translate-y-0.5 active:translate-y-0">
                       <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="lucide lucide-apple"><path d="M12 20.94c1.5 0 2.75 1.06 4 1.06 3 0 6-8 6-12.22A4.91 4.91 0 0 0 17 5c-2.22 0-4 1.44-5 2-1-.56-2.78-2-5-2a4.9 4.9 0 0 0-5 4.78C2 14 5 22 8 22c1.25 0 2.5-1.06 4-1.06Z"/><path d="M10 2c1 .5 2 2 2 5"/></svg>
                       <div className="text-left">
                         <div className="text-[10px] uppercase opacity-60 leading-none">Download on the</div>
                         <div className="text-sm font-semibold leading-tight">App Store</div>
                       </div>
-                    </a>
+                    </AppDownloadLink>
                     
-                    <a href="https://play.google.com/store/apps/details?id=com.neosurge.neosurge" target="_blank" rel="noopener noreferrer" className="mino-pill-outline flex items-center gap-3 !py-3.5 !px-6 transition-all duration-300 hover:-translate-y-0.5 active:translate-y-0">
+                    <AppDownloadLink platform="android" className="mino-pill-outline flex items-center gap-3 !py-3.5 !px-6 transition-all duration-300 hover:-translate-y-0.5 active:translate-y-0">
                       <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="lucide lucide-smartphone"><rect width="14" height="20" x="5" y="2" rx="2" ry="2"/><path d="M12 18h.01"/></svg>
                       <div className="text-left">
                         <div className="text-[10px] uppercase opacity-60 leading-none">Get it on</div>
                         <div className="text-sm font-semibold leading-tight">Google Play</div>
                       </div>
-                    </a>
+                    </AppDownloadLink>
                   </div>
 
                   <div className="pt-6 flex flex-wrap items-center gap-x-8 gap-y-4 text-xs text-mino-muted">
@@ -205,12 +206,12 @@ export default function Home() {
               </p>
               
               <div className="pt-4 flex flex-wrap justify-center items-center gap-4">
-                <a href="https://apps.apple.com/in/app/zypay/id6452753963" target="_blank" rel="noopener noreferrer" className="bg-mino-cream text-mino-ink hover:bg-mino-cream/90 font-medium px-8 py-3.5 rounded-full inline-flex items-center gap-3 transition-all duration-300 hover:-translate-y-0.5 text-sm">
+                <AppDownloadLink platform="ios" className="bg-mino-cream text-mino-ink hover:bg-mino-cream/90 font-medium px-8 py-3.5 rounded-full inline-flex items-center gap-3 transition-all duration-300 hover:-translate-y-0.5 text-sm">
                   Download for iOS
-                </a>
-                <a href="https://play.google.com/store/apps/details?id=com.neosurge.neosurge" target="_blank" rel="noopener noreferrer" className="border border-mino-cream/30 hover:bg-white/10 font-medium px-8 py-3.5 rounded-full inline-flex items-center gap-3 transition-all duration-300 hover:-translate-y-0.5 text-sm">
+                </AppDownloadLink>
+                <AppDownloadLink platform="android" className="border border-mino-cream/30 hover:bg-white/10 font-medium px-8 py-3.5 rounded-full inline-flex items-center gap-3 transition-all duration-300 hover:-translate-y-0.5 text-sm">
                   Download for Android
-                </a>
+                </AppDownloadLink>
               </div>
             </div>
           </section>
