@@ -28,8 +28,9 @@ export default function Header() {
           {/* Desktop Navigation */}
           <nav className="hidden md:flex items-center gap-8 text-xs uppercase tracking-widest text-mino-ink/70 font-medium">
             <a href="/#yield" className="hover:text-mino-ink transition-colors">Yield</a>
+            <a href="/tools/smart-budget" className="hover:text-mino-ink transition-colors">Smart Budget</a>
             <a href="/#features" className="hover:text-mino-ink transition-colors">Features</a>
-            <a href="/#partners" className="hover:text-mino-ink transition-colors">Partners</a>
+            {/* <a href="/#partners" className="hover:text-mino-ink transition-colors">Partners</a> */}
             <a href="/blog" className="hover:text-mino-ink transition-colors">Blog</a>
             <a href="/#faqs" className="hover:text-mino-ink transition-colors">FAQs</a>
           </nav>
@@ -54,8 +55,9 @@ export default function Header() {
       <div className={`md:hidden absolute top-16 inset-x-0 bg-mino-cream border-b border-mino-line shadow-lg transition-all duration-300 ease-in-out transform origin-top ${isOpen ? 'opacity-100 scale-y-100' : 'opacity-0 scale-y-0 pointer-events-none'}`}>
       <nav className="flex flex-col p-6 space-y-4 text-sm uppercase tracking-wider font-medium text-mino-ink/80">
         <a href="/#yield" onClick={toggleMenu} className="hover:text-mino-ink py-2 transition-colors">Yield</a>
+        <a href="/tools/smart-budget" onClick={toggleMenu} className="hover:text-mino-ink py-2 transition-colors">Smart Budget</a>
         <a href="/#features" onClick={toggleMenu} className="hover:text-mino-ink py-2 transition-colors">Features</a>
-        <a href="/#partners" onClick={toggleMenu} className="hover:text-mino-ink py-2 transition-colors">Partners</a>
+        {/* <a href="/#partners" onClick={toggleMenu} className="hover:text-mino-ink py-2 transition-colors">Partners</a> */}
         <a href="/blog" onClick={toggleMenu} className="hover:text-mino-ink py-2 transition-colors">Blog</a>
         <a href="/#faqs" onClick={toggleMenu} className="hover:text-mino-ink py-2 transition-colors">FAQs</a>
       </nav>
