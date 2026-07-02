@@ -84,8 +84,29 @@ export default async function BlogPost({ params }: { params: Promise<{ slug: str
   
   if (!post) return notFound()
 
+  const postUrl = `https://minomoney.in/blog/${resolvedParams.slug}`
+  const imageUrl = post.coverImage ? urlFor(post.coverImage).width(1200).height(630).url() : ''
+  
+  const jsonLd = {
+    '@context': 'https://schema.org',
+    '@type': 'Article',
+    headline: post.title,
+    image: imageUrl ? [imageUrl] : [],
+    datePublished: post.publishedAt,
+    dateModified: post.publishedAt,
+    author: [{
+      '@type': 'Organization',
+      name: 'Mino Money',
+      url: 'https://minomoney.in'
+    }]
+  }
+
   return (
     <div className="min-h-screen flex flex-col justify-between bg-mino-cream text-mino-ink antialiased">
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
+      />
       <div>
         <Header />
         

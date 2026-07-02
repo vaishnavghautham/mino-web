@@ -29,8 +29,25 @@ export default function FaqSection() {
     }
   ];
 
+  const jsonLd = {
+    '@context': 'https://schema.org',
+    '@type': 'FAQPage',
+    mainEntity: faqData.map((item) => ({
+      '@type': 'Question',
+      name: item.question,
+      acceptedAnswer: {
+        '@type': 'Answer',
+        text: item.answer,
+      },
+    })),
+  };
+
   return (
     <section id="faqs" className="bg-mino-cream py-24 border-t border-mino-line">
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
+      />
       <div className="container mx-auto px-6 max-w-3xl">
         <div className="text-center mb-16">
           <span className="mino-eyebrow justify-center mb-2">Transparency</span>
