@@ -15,9 +15,13 @@ const inconsolata = Inconsolata({
 });
 
 export const metadata: Metadata = {
+  metadataBase: new URL("https://minomoney.in"),
+  alternates: {
+    canonical: "/",
+  },
   title: "Mino Money - Earn Up to 7% on Idle Savings. Withdraw in Minutes.",
   description: "Mino parks your idle cash in liquid mutual funds and earns you up to 7% a year. Withdraw to your bank in minutes, any day. No lock-in, no hidden charges. A smarter savings account alternative for India.",
-  keywords: "liquid fund app India, savings account alternative India, park idle money India, earn more than savings account, instant redemption liquid fund, idle cash earning app, high yield savings India, liquid mutual fund withdrawal, Mino Money, Mino, smart savings India",
+  keywords: "Liquid Funds, Idle Money, Savings Account, Instant Withdrawals, 7% Annual Returns, Liquid Mutual Funds, Emergency Fund, Short-term Savings, Better Returns, Zero Lock-in, Cash Management, Invest Online, Savings Goals, SEBI-regulated Mutual Funds, Wealth Building, Financial Planning",
   authors: [{ name: "Mino Money" }],
   openGraph: {
     title: "Mino Money — Earn Up to 7% on Your Savings",
@@ -116,10 +120,15 @@ const appSchema = {
 
 const orgSchema = {
   "@context": "https://schema.org",
-  "@type": "Organization",
+  "@type": "FinancialService",
   "name": "Mino Money",
   "url": "https://minomoney.in",
   "logo": "https://minomoney.in/mino-logo.png",
+  "description": "Mino Money is a smart savings platform that helps you earn better returns on your idle cash by investing in SEBI-regulated liquid mutual funds.",
+  "parentOrganization": {
+    "@type": "Organization",
+    "name": "Bullsurge Private Limited"
+  },
   "contactPoint": {
     "@type": "ContactPoint",
     "email": "support@minomoney.in",
